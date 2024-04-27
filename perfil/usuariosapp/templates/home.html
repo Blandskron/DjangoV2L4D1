@@ -3,15 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title>Perfil</title>
 </head>
 <body>
-    <h1>Bienvenido a nuestra aplicación</h1>
-    
-    <!-- Enlace para registrarse -->
-    <p>¿No tienes una cuenta? <a href="{% url 'signup' %}">Regístrate aquí</a></p>
-    
-    <!-- Enlace para iniciar sesión -->
-    <p>¿Ya tienes una cuenta? <a href="{% url 'login' %}">Inicia sesión aquí</a></p>
+    <h2>Perfil de Usuario</h2>
+    <div>
+        {% if user.is_authenticated %}
+            <p>¡Hola, {{ user.username }}!</p>
+            {% if user.userprofile.profile_picture %}
+                <img src="{{ user.userprofile.profile_picture.url }}" alt="Imagen de perfil" width="50px">
+            {% else %}
+                <p>No has subido una imagen de perfil todavía.</p>
+            {% endif %}
+            <a href="{% url 'logout' %}">Cerrar sesión</a>
+        {% else %}
+            <p>Inicia sesión para ver tu perfil.</p>
+            <a href="{% url 'login' %}">Iniciar sesión</a>
+        {% endif %}
+    </div>
 </body>
 </html>

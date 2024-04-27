@@ -66,17 +66,12 @@ TEMPLATES = [
             ],
         },
     },
-]
-
-AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',  # Backend de Django
-    'usuariosapp.backends.CustomUserModelBackend',  # Backend personalizado
-]
+],
 
 
 
 # LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = '/index/'
+LOGIN_REDIRECT_URL = '/profile/'
 
 
 WSGI_APPLICATION = 'perfil.wsgi.application'
