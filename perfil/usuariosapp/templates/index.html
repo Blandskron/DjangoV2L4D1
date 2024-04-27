@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de usuario</title>
+</head>
+<body>
+    <h2>Perfil de usuario</h2>
+    <img src="{{ user.foto_perfil.url }}" alt="Foto de perfil">
+    <p><strong>Nombre:</strong> {% if user.nombre %}{{ user.nombre }}{% else %}N/A{% endif %}</p>
+    <p><strong>Apellido:</strong> {% if user.apellido %}{{ user.apellido }}{% else %}N/A{% endif %}</p>
+    <p><strong>Correo electrónico:</strong> {% if user.correo %}{{ user.correo }}{% else %}N/A{% endif %}</p>
+    <p><strong>Edad:</strong> {% if user.edad %}{{ user.edad }}{% else %}N/A{% endif %}</p>
+    <a href="{% url 'edit_profile' %}">Editar perfil</a>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de usuario</title>
+</head>
+<body>
+    <h2>Perfil de usuario</h2>
+    <img src="{{ user.foto_perfil.url }}" alt="Foto de perfil">
+    <p><strong>Nombre:</strong> {{ user.nombre }}</p>
+    <p><strong>Apellido:</strong> {{ user.apellido }}</p>
+    <p><strong>Correo electrónico:</strong> {{ user.correo }}</p>
+    <p><strong>Edad:</strong> {{ user.edad }}</p>
+    <a href="{% url 'edit_profile' %}">Editar perfil</a>
+</body>
+</html> -->
